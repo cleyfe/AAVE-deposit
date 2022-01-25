@@ -1,0 +1,182 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+
+
+/*TABLE*/
+.centered {
+    text-align: center;
+}
+
+.crypto-table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+table, th, td {
+  border: none;
+}
+
+table {
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table.striped tr {
+  border-bottom: none;
+}
+
+table.striped > tbody > tr:nth-child(odd) {
+  background-color: rgba(242, 242, 242, 0.5);
+}
+
+table.striped > tbody > tr > td {
+  border-radius: 0;
+}
+
+table.highlight > tbody > tr {
+  -webkit-transition: background-color .25s ease;
+  transition: background-color .25s ease;
+}
+
+table.highlight > tbody > tr:hover {
+  background-color: rgba(242, 242, 242, 0.5);
+}
+
+table.centered thead tr th, table.centered tbody tr td {
+  text-align: center;
+}
+  
+tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+td, th {
+  padding: 15px 5px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  table.responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    position: relative;
+    /* sort out borders */
+  }
+  table.responsive-table td:empty:before {
+    content: '\00a0';
+  }
+  table.responsive-table th,
+  table.responsive-table td {
+    margin: 0;
+    vertical-align: top;
+  }
+  table.responsive-table th {
+    text-align: left;
+  }
+  table.responsive-table thead {
+    display: block;
+    float: left;
+  }
+  table.responsive-table thead tr {
+    display: block;
+    padding: 0 10px 0 0;
+  }
+  table.responsive-table thead tr th::before {
+    content: "\00a0";
+  }
+  table.responsive-table tbody {
+    display: block;
+    width: auto;
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  table.responsive-table tbody tr {
+    display: inline-block;
+    vertical-align: top;
+  }
+  table.responsive-table th {
+    display: block;
+    text-align: right;
+  }
+  table.responsive-table td {
+    display: block;
+    min-height: 1.25em;
+    text-align: left;
+  }
+  table.responsive-table tr {
+    border-bottom: none;
+    padding: 0 10px;
+  }
+  table.responsive-table thead {
+    border: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+  }
+}
+
+/*blockchains logo cards*/
+.select {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /*max-width: 300px;*/
+  gap: 10px;
+}
+
+@media (max-width: 767px) {
+  .select {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 449px) {
+  .select {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.select__item {
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 3px;
+  border: solid;
+  border-width: 3px;
+  border-color: #34444c;
+  background: #eeeeee;
+  transition: background 0.1s;
+  color: #34444c;
+  font-weight: bold;
+}
+
+.select__item--selected {
+  padding: 10px;
+  text-align: center;
+  border-radius: 3px;
+  border: solid;
+  border-width: 3px;
+  border-color: #fff;
+  background: #723182;
+  color: #fff;
+}
