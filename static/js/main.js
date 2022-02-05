@@ -1,6 +1,6 @@
 /* Moralis init code */
-const serverUrl = "YOUR_SERVER_URL";
-const appId = "YOUR_SERVER_APPID";
+const serverUrl = "https://uz1awvmzblm7.usemoralis.com:2053/server";
+const appId = "8Il2sd5jua25yuLdHn7pSPz7P3up0ManQ3zsGHQX";
 Moralis.start({ serverUrl, appId });
 
 
@@ -18,19 +18,46 @@ DEVELOPER DOCS CAN BE FOUND AT: https://docs.aave.com/developers/
 async function deposit() {
   const web3 = await Moralis.enableWeb3();
   var user = Moralis.User.current();
-  var abi = '' //couldn't find the right to use here
 
+  var abiv2 = 
+  [
+    {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_reserve",
+        type: "address"
+      },
+      {
+        internalType: "uint256",
+        name: "_amount",
+        type: "uint256"
+      },
+      {
+        internalType: "uint16",
+        name: "_referralCode",
+        type: "uint16"
+      }
+    ],
+    name: "deposit",
+    outputs: [],
+    payable: true,
+    stateMutability: "payable",
+    type: "function"
+  }
+]
   let options = {
-    contractAddress: '0xE0fBa4Fc209b4948668006B2bE61711b7f465bAe', //This should be the Kovan testnet address for the Aave Smart Contract 
+    contractAddress: '0x580D4Fdc4BF8f9b5ae2fb9225D584fED4AD5375c', 
     functionName: 'deposit',
-    abi: abi,
+    abi: abiv2,
     params: {
-      asset: '0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD', // DAI
-      amount: 100*(10**18),
-      onBehalfOf: user.get('ethAddress'),
-      referralCode: 0,
+      //deposit: "0.0001",
+      _reserve : "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE", 
+      _amount: "1111111111",
+      //_user: user.get('ethAddress'),
+      _referralCode: "0",
     },
-    //msg.Value: ''
+    msgValue: '1111111111111111'
   }
 
   console.log(options)
